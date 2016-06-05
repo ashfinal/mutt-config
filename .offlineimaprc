@@ -1,0 +1,25 @@
+[general]
+accounts = viziner
+ui = basic
+
+[Account viziner]
+localrepository = viziner-Local
+remoterepository = viziner-Remote
+autorefresh = 1
+
+[Repository viziner-Local]
+type = Maildir
+localfolders = ~/.mutt/viziner
+
+[Repository viziner-Remote]
+type = IMAP
+remotehost = imap.host.com
+remoteport = 993
+ssl = yes
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+remoteuser = user
+remotepass = xxx
+# realdelete = no
+maxconnections = 4
+keepalive = 60
+holdconnectionopen = yes

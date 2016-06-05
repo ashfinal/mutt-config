@@ -1,0 +1,55 @@
+# set imap_user = "xxx@xxx.com"
+# set imap_pass = "xxx"
+# set folder = "imaps://imap.host.com:993"
+# set smtp_url = "smtp://user@smtp.host.com:587"
+# set smtp_pass = "xxx"
+# set spoolfile = "+INBOX"
+# set postponed = "+Drafts"
+# set record = "+Sent"
+
+# unset imap_passive
+# set imap_idle = yes
+# set imap_keepalive = 900
+# set mail_check = 5
+
+set folder = $HOME/.mutt
+set spoolfile = "+/viziner/INBOX"
+
+source ~/.mutt/accounts/viziner
+
+folder-hook viziner/* source ~/.mutt/accounts/viziner
+
+# set header_cache = ~/.mutt/cache/headers
+# set message_cachedir = ~/.mutt/cache/bodies
+
+set sort = threads
+set sort_browser = date
+set sort_aux = reverse-last-date-received
+
+set check_new = yes
+set mail_check = 30
+set beep_new
+set wait_key=no
+
+set rfc2047_parameters=yes
+set send_charset="us-ascii:iso-8859-1:gb18030:utf-8"
+set edit_headers=yes
+set indent_str = "> "
+
+# Key bindings
+bind pager j next-line
+bind pager k previous-line
+# bind attach,index,pager \CD next-page
+# bind attach,index,pager \CU previous-page
+bind pager gg top
+bind pager G bottom
+bind attach,index gg first-entry
+bind attach,index G last-entry
+
+# Colors
+# color hdrdefault black white  # headers white on black
+# color header brightgreen white ^From:  # sender's name in green
+# color quoted cyan white  # quoted text in blue
+# color signature red white   # signature in red
+source ~/.mutt/mutt.color
+source ~/.mutt/mutt.contact

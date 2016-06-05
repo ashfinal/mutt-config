@@ -1,0 +1,15 @@
+set from = "user"
+set sendmail = "/usr/local/bin/msmtp -a viziner"
+set mbox = "+viziner/Archive"
+set postponed = "+viziner/Drafts"
+set record = "+viziner/Sent Messages"
+
+color status green default
+
+macro index I \
+    "<save-message>+viziner/INBOX<enter>" \
+        "move message to the inbox"
+
+macro index S \
+    "<save-message>+viziner/Junk<enter>"  \
+        "mark message as spam"
